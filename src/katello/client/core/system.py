@@ -622,7 +622,7 @@ class Subscriptions(SystemAction):
             # listing available pools
             result = self.api.available_pools(uuid, match_system, match_installed, no_overlap)
 
-            if result == None or len(result) == 0:
+            if result == None or len(result['pools']) == 0:
                 print _("No Pools found for System [ %(display_name)s ] in Org [ %(org)s ]") \
                     % {'display_name':display_name, 'org':org}
                 return os.EX_OK
